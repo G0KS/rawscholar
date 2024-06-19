@@ -1,13 +1,22 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:course_list",
+ "autoname": "format:COR-{####}",
  "creation": "2024-06-12 12:25:11.838484",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_rwda",
-  "course_list"
+  "course",
+  "university",
+  "level",
+  "branch",
+  "column_break_izow",
+  "duration",
+  "mode",
+  "fee",
+  "exam_accepted"
  ],
  "fields": [
   {
@@ -15,20 +24,59 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "course_list",
+   "fieldname": "course",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Course List",
-   "unique": 1
+   "label": "Course "
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Data",
+   "label": "Level"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Data",
+   "label": "Branch"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Data",
+   "label": "Mode"
+  },
+  {
+   "fieldname": "fee",
+   "fieldtype": "Data",
+   "label": "Fee"
+  },
+  {
+   "fieldname": "exam_accepted",
+   "fieldtype": "Data",
+   "label": "Exam Accepted"
+  },
+  {
+   "fieldname": "column_break_izow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "university",
+   "fieldtype": "Link",
+   "label": "University",
+   "options": "University"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-12 12:25:51.674381",
+ "modified": "2024-06-18 15:20:00.505079",
  "modified_by": "Administrator",
  "module": "Rawscholar",
  "name": "Courses",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -36,6 +84,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:name1",
  "creation": "2024-06-10 09:34:21.721338",
@@ -159,7 +160,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 16:36:42.065516",
+ "modified": "2024-06-18 11:16:21.797614",
  "modified_by": "Administrator",
  "module": "Rawscholar",
  "name": "Student",
@@ -171,6 +172,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,

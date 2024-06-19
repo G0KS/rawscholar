@@ -9,9 +9,14 @@ import university6 from "../assets/universities/university6.svg";
 import university7 from "../assets/universities/university7.svg";
 import university8 from "../assets/universities/university8.svg";
 import { Link } from "react-router-dom";
+import { useFrappeGetDocList } from "frappe-react-sdk";
 
 function Universities({show}) {
    show(true)
+   
+   const {data,error} = useFrappeGetDocList("University",{fields: ['country','university']})
+   console.log(data,error);
+
    return (
       <section id="universitiesSection" className="container">
          <div className="universitiesContainer shapeParent my-5">
@@ -20,7 +25,8 @@ function Universities({show}) {
                <h3 className="ms-4">Universities</h3>
             </div>
             <div className="universityList d-flex justify-content-center align-items-center gap-5 flex-wrap">
-               <Link
+               {data?.map((university)=>(
+                  <div
                   to="/university"
                   style={{ textDecoration: "none", color: "black" }}
                >
@@ -34,152 +40,14 @@ function Universities({show}) {
                         style={{ width: "100%" }}
                         className="rounded mb-3"
                      />
-                     <p className="unviversitytitile">In USA</p>
+                     <p className="unviversitytitile">In {university.country}</p>
                      <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
+                        {university.university}
                      </p>
                   </div>
-               </Link>
-               <Link
-                  to="/university"
-                  style={{ textDecoration: "none", color: "black" }}
-               >
-                  <div
-                     className=" universitycard shadow p-3 rounded"
-                     style={{ width: "18rem" }}
-                  >
-                     <img
-                        src={university2}
-                        alt="university1"
-                        style={{ width: "100%" }}
-                        className="rounded mb-3"
-                     />
-                     <p className="unviversitytitile">In USA</p>
-                     <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
-                     </p>
-                  </div>
-               </Link>
-               <Link
-                  to="/university"
-                  style={{ textDecoration: "none", color: "black" }}
-               >
-                  <div
-                     className=" universitycard shadow p-3 rounded"
-                     style={{ width: "18rem" }}
-                  >
-                     <img
-                        src={university3}
-                        alt="university1"
-                        style={{ width: "100%" }}
-                        className="rounded mb-3"
-                     />
-                     <p className="unviversitytitile">In USA</p>
-                     <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
-                     </p>
-                  </div>
-               </Link>
-               <Link
-                  to="/university"
-                  style={{ textDecoration: "none", color: "black" }}
-               >
-                  <div
-                     className=" universitycard shadow p-3 rounded"
-                     style={{ width: "18rem" }}
-                  >
-                     <img
-                        src={university4}
-                        alt="university1"
-                        style={{ width: "100%" }}
-                        className="rounded mb-3"
-                     />
-                     <p className="unviversitytitile">In USA</p>
-                     <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
-                     </p>
-                  </div>
-               </Link>
-               <Link
-                  to="/university"
-                  style={{ textDecoration: "none", color: "black" }}
-               >
-                  <div
-                     className=" universitycard shadow p-3 rounded"
-                     style={{ width: "18rem" }}
-                  >
-                     <img
-                        src={university5}
-                        alt="university5"
-                        style={{ width: "100%" }}
-                        className="rounded mb-3"
-                     />
-                     <p className="unviversitytitile">In USA</p>
-                     <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
-                     </p>
-                  </div>
-               </Link>
-               <Link
-                  to="/university"
-                  style={{ textDecoration: "none", color: "black" }}
-               >
-                  <div
-                     className=" universitycard shadow p-3 rounded"
-                     style={{ width: "18rem" }}
-                  >
-                     <img
-                        src={university6}
-                        alt="university6"
-                        style={{ width: "100%" }}
-                        className="rounded mb-3"
-                     />
-                     <p className="unviversitytitile">In USA</p>
-                     <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
-                     </p>
-                  </div>
-               </Link>
-               <Link
-                  to="/university"
-                  style={{ textDecoration: "none", color: "black" }}
-               >
-                  <div
-                     className=" universitycard shadow p-3 rounded"
-                     style={{ width: "18rem" }}
-                  >
-                     <img
-                        src={university7}
-                        alt="university7"
-                        style={{ width: "100%" }}
-                        className="rounded mb-3"
-                     />
-                     <p className="unviversitytitile">In USA</p>
-                     <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
-                     </p>
-                  </div>
-               </Link>
-               <Link
-                  to="/university"
-                  style={{ textDecoration: "none", color: "black" }}
-               >
-                  <div
-                     className=" universitycard shadow p-3 rounded"
-                     style={{ width: "18rem" }}
-                  >
-                     <img
-                        src={university8}
-                        alt="university8"
-                        style={{ width: "100%" }}
-                        className="rounded mb-3"
-                     />
-                     <p className="unviversitytitile">In USA</p>
-                     <p className="universityfname">
-                        Massachusetts Institute of Technology (MIT)
-                     </p>
-                  </div>
-               </Link>
+               </div>
+               
+               ))}
             </div>
          </div>
       </section>

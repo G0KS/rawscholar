@@ -1,9 +1,14 @@
 import React from "react";
 
 import university1 from "../assets/universities/university1.svg";
+import { useFrappeGetDocList } from "frappe-react-sdk";
 
 function University({show}) {
    show(true)
+
+   const {data,error} = useFrappeGetDocList("Courses",{fields:['course','university','duration','mode','fee','level','exam_accepted'],filters:[['university','=','University of Limerick, Limerick']]})
+   console.log(data,error);
+
    return (
       <section id="universitySection" className="container">
          <div className="universityContainer my-5">
@@ -48,27 +53,29 @@ function University({show}) {
                </div>
             </div>
             <div className="courseContainer d-flex justify-content-between gap-5 flex-wrap py-5 px-2">
-               <div className="courseCard rounded shadow p-5 col-lg-5">
+               {data?.map((course)=>(
+                  <div className="courseCard rounded shadow p-5 col-lg-5">
                   <div className="courseTitle mb-4 fw-bold">
-                     <h5 className="fw-bold">Bachelor of Science in Physics</h5>
+                     <h5 className="fw-bold">{course.course}</h5>
                   </div>
                   <div className="courseContent row">
                      <div className="col-3">
                         <span style={{ color: "#067BC2" }}>Duration</span>
-                        <p style={{ color: "gray" }}>1 Year</p>
+                        <p style={{ color: "gray" }}>{course.duration}</p>
                      </div>
                      <div className="col-6">
                         <span style={{ color: "#067BC2" }}>
                            1st Year Tuition Fees
                         </span>
-                        <p style={{ color: "gray" }}>$64.3</p>
+                        <p style={{ color: "gray" }}>{course.fee}</p>
                      </div>
                      <div className="col-3">
                         <span style={{ color: "#067BC2" }}>Level</span>
-                        <p style={{ color: "gray" }}>Bachelor</p>
+                        <p style={{ color: "gray" }}>{course.mode}</p>
                      </div>
                   </div>
                </div>
+               ))}
             </div>
          </div>
       </section>
