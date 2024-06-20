@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 
 import university1 from "../assets/universities/university1.svg";
 import { useFrappeGetDocList } from "frappe-react-sdk";
@@ -20,9 +20,7 @@ function University({ show }) {
     ],
     filters: [["university", "=", unviersityData.university]],
   });
-  console.log("data error", data, error);
-
-  //   console.log("university",unviersityData);
+  console.log(error);
 
   return (
     <section id="universitySection" className="container">

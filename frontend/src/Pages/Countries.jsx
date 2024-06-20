@@ -14,8 +14,7 @@ function Countries({ show }) {
    const navigate = useNavigate()
    const goToCountry = (country) =>{
       setCountryData(country)
-      console.log(countryData);
-      // navigate("/universities")
+      navigate("/universities")
    }
 
    return (
