@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import logowhite from "../../assets/logowhite.png";
@@ -98,9 +97,7 @@ function FooterComponent() {
                   className="rounded d-none d-sm-block"
                   title="location map"
                   style={{ border: "0" }}
-                  allowfullscreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
                ></iframe>
             </div>
          </div>

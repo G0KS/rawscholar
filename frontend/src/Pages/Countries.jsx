@@ -1,25 +1,21 @@
-import React from "react";
 
 import germany from "../assets/flags/germany.png";
-import hungary from "../assets/flags/hungary.png";
-import france from "../assets/flags/france.png";
-import latvia from "../assets/flags/latvia.png";
-import malta from "../assets/flags/malta.png";
-import uk from "../assets/flags/uk.png";
-import ireland from "../assets/flags/ireland.png";
-import lithuania from "../assets/flags/lithuania.png";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import {useFrappeGetDocList} from 'frappe-react-sdk'
+import { useContext } from "react";
+import { countryContext } from "../Components/ContextShare";
 
 function Countries({ show }) {
    show(true);
 
    const {data,error} = useFrappeGetDocList('Countries')
    console.log(error);
-
+   const { countryData, setCountryData } = useContext(countryContext)
    const navigate = useNavigate()
-   const goToCountry = () =>{
-      navigate("/universities")
+   const goToCountry = (country) =>{
+      setCountryData(country)
+      console.log(countryData);
+      // navigate("/universities")
    }
 
    return (
@@ -30,8 +26,8 @@ function Countries({ show }) {
                <h3 className="ms-4">Countries</h3>
             </div>
             <div className="d-flex flex-wrap justify-content-center align-items-center column-gap-3 my-5">
-                  {data?.map((country)=>(
-                     <div onClick={goToCountry} style={{ textDecoration: "none" }}>
+                  {data?.map((country,i)=>(
+                     <div onClick={()=>goToCountry(country)} style={{ textDecoration: "none" }} key={i}>
                            <div>
                            <img
                               src={germany}

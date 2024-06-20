@@ -77,7 +77,6 @@ function Home({ show }) {
                      src="https://www.youtube.com/embed/QfBasFOvhyI?si=VPPZBM6Pph3J-WQ6"
                      title="YouTube video player"
                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                     allowfullscreen
                   ></iframe>
                </div>
                <div

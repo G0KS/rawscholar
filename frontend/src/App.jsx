@@ -21,9 +21,7 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
 	const [show, setShow] = useState(true);
-  const [selectedUniversity,setSelectedUniversity] = useState('')
  
-
   return (
 	<FrappeProvider>
 		{show && <NavbarComponent />}
@@ -37,7 +35,7 @@ function App() {
           />
           <Route path="/university" element={<University show={setShow} />} />
           <Route path="/login" element={<Login show={setShow} />} />
-          <Route path="/signup" element={<Signup show={setShow} />} />
+          <Route path="/signup" element={<Signup />} />
           <Route
             path="/forgotpassword"
             element={<ForgotPassword show={setShow} />}
