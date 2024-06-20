@@ -37,7 +37,7 @@ function NavbarComponent() {
                   <div className="d-flex gap-4 fw-medium">
                      <Nav.Link className={`${style.navHeading}`} href="/services">Services</Nav.Link>
                      <Nav.Link className={`${style.navHeading}`} href="/about">About</Nav.Link>
-                     <Nav.Link className={`${style.navHeading}`} href="/contact">Contact</Nav.Link>
+                     <Nav.Link className={`${style.navHeading}`} href="/contactus">Contact</Nav.Link>
                      <Link to="/signup">
                         <Button className={style.button} type="submit">
                            Sign Up

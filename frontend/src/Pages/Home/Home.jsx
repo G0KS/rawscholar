@@ -22,7 +22,7 @@ function Home({ show }) {
          <section id="heroContainer">
             <div className={styles.hero}>
                <div className={styles.heroContent}>
-                  <div className={styles.heroText} style={{fontSize:"70px"}}>ignite</div>
+                  <div className={styles.heroText}>ignite</div>
                   <div className={styles.heroText}>
                      <span>your academic journey</span>
                   </div>
@@ -81,7 +81,6 @@ function Home({ show }) {
                </div>
                <div
                   className="col-lg-6 py-4 px-5 shadow rounded shapeParent"
-                  style={{ height: "315px" }}
                >
                   <div className="d-flex">
                      <div className="shape"></div>

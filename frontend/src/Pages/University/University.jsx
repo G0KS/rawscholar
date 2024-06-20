@@ -2,11 +2,11 @@ import { useContext } from "react";
 
 import university1 from "../assets/universities/university1.svg";
 import { useFrappeGetDocList } from "frappe-react-sdk";
-import { universityContext } from "../Components/ContextShare";
+import { universityContext } from "../../Components/ContextShare";
 
 function University({ show }) {
   show(true);
-  const { unviersityData, setUniversityData } = useContext(universityContext);
+  const { unviersityData } = useContext(universityContext);
   console.log("university", unviersityData);
   const { data, error } = useFrappeGetDocList("Courses", {
     fields: [

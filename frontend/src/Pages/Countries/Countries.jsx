@@ -3,14 +3,14 @@ import germany from "../assets/flags/germany.png";
 import {  useNavigate } from "react-router-dom";
 import {useFrappeGetDocList} from 'frappe-react-sdk'
 import { useContext } from "react";
-import { countryContext } from "../Components/ContextShare";
+import { countryContext } from "../../Components/ContextShare";
 
 function Countries({ show }) {
    show(true);
 
    const {data,error} = useFrappeGetDocList('Countries')
    console.log(error);
-   const { countryData, setCountryData } = useContext(countryContext)
+   const { setCountryData } = useContext(countryContext)
    const navigate = useNavigate()
    const goToCountry = (country) =>{
       setCountryData(country)

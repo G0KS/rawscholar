@@ -2,18 +2,15 @@ import { useNavigate } from "react-router-dom";
 import university1 from "../assets/universities/university1.svg";
 
 import { useFrappeGetDocList } from "frappe-react-sdk";
-import { useContext, useState } from "react";
-import { countryContext, universityContext } from "../Components/ContextShare";
+import { useContext } from "react";
+import { countryContext, universityContext } from "../../Components/ContextShare";
 
 function Universities({ show }) {
   show(true);
-  const [filters, setFilters] = useState([]);
   const navigate = useNavigate();
-  const { unviersityData, setUniversityData } = useContext(universityContext);
-  const { countryData, setCountryData } = useContext(countryContext);
+  const { setUniversityData } = useContext(universityContext);
+  const { countryData } = useContext(countryContext);
  
-  // countryData?setFilters(['country','=',countryData.name]):setFilters([])
-
   const { data, error } = useFrappeGetDocList("University", {
     fields: ["country", "university", "type_of_university", "location"],
     filters: countryData?[['country','=',countryData.name]]:[],
