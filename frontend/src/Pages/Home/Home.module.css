@@ -10,7 +10,13 @@
    top: 50%;
    transform: translate(0%, -50%);
    color: white;
-   font-size: 55px;
+   font-size: 4.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+   .heroContent{
+      font-size: 1.5rem;
+   }
 }
 
 .heroText {

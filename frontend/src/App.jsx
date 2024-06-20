@@ -42,8 +42,8 @@ function App() {
           />
           <Route path="/profile" element={<Profile show={setShow} />} />
           <Route path="/contactus" element={<Contactus show={setShow} />} />
-          <Route path="/faq" element={<Faq />} show={setShow} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="/faq" element={<Faq  show={setShow}/>} />
+          <Route path="*" element={<PageNotFound  show={setShow}/>} />
         </Routes>
         {show && <FooterComponent />}
 	</FrappeProvider>
