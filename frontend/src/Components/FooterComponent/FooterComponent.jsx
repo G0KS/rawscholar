@@ -50,7 +50,7 @@ function FooterComponent() {
                </li>
                <li>
                   <Link
-                     to="/"
+                     to="/contactus"
                      style={{ textDecoration: "none", color: "white" }}
                   >
                      Contact
