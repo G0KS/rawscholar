@@ -12,13 +12,15 @@ function NavbarComponent() {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="/">
-          <img
-            alt="Logo"
-            src={Logo}
-            height="50"
-            className="d-inline-block align-top"
-          />
+        <Navbar.Brand>
+          <Link to="/">
+            <img
+              alt="Logo"
+              src={Logo}
+              height="50"
+              className="d-inline-block align-top"
+            />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

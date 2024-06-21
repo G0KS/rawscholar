@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.svg";
@@ -8,22 +8,37 @@ import { useFrappeCreateDoc } from "frappe-react-sdk";
 
 function Signup({ show }) {
   show(false);
+
+  const [userData, setUserData] = useState({
+    name1: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+
   const { createDoc } = useFrappeCreateDoc();
+
+  const getUserData = (e) => {
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
+    console.log(userData);
+  };
+
   const signin = () => {
-    console.log("sas");
     createDoc("Student", {
       name1: "Test",
     })
       .then((doc) => console.log(doc))
       .catch((error) => console.error(error));
   };
+
   return (
     <div className="containerlogin d-flex justify-content-center align-items-center">
       <div style={{ height: "700px" }}>
         <img
           className="p-1  d-none d-sm-block"
           src={StudyIllustration}
-          alt=""
+          alt="Study"
           style={{ height: "100%" }}
         />
       </div>
@@ -36,7 +51,9 @@ function Signup({ show }) {
           <input
             className="inputBox"
             type="text"
-            placeholder="Enter Email"
+            name="name1"
+            onChange={(e) => getUserData(e)}
+            placeholder="Enter Full Name"
             style={{ fontSize: "15px" }}
           />
         </div>
@@ -47,6 +64,8 @@ function Signup({ show }) {
           <input
             className="inputBox"
             type="text"
+            name="email"
+            onChange={(e) => getUserData(e)}
             placeholder="Enter Email"
             style={{ fontSize: "15px" }}
           />
@@ -58,7 +77,9 @@ function Signup({ show }) {
           <input
             className="inputBox"
             type="text"
-            placeholder="Enter Email"
+            name="phone"
+            onChange={(e) => getUserData(e)}
+            placeholder="Enter Phone Number"
             style={{ fontSize: "15px" }}
           />
         </div>
@@ -69,7 +90,9 @@ function Signup({ show }) {
           </p>
           <input
             className="inputBox"
-            type="text"
+            type="password"
+            name="password"
+            onChange={(e) => getUserData(e)}
             placeholder="Enter Password"
             style={{ fontSize: "15px" }}
           />
@@ -80,7 +103,8 @@ function Signup({ show }) {
           </p>
           <input
             className="inputBox"
-            type="text"
+            type="password"
+            name="confirmPassword"
             placeholder="Enter Password"
             style={{ fontSize: "15px" }}
           />
