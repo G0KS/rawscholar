@@ -6,6 +6,19 @@ app_email = "goksrofficial@gmail.com"
 app_license = "mit"
 # required_apps = []
 
+<<<<<<< HEAD
+=======
+fixtures = [
+    {"dt": "Attachment Type"},
+    {"dt": "Countries"},
+    {"dt": "Courses"},
+    {"dt": "University"},
+    {"dt": "Number Card"},
+
+    {"dt": "Qualification Type"},
+]
+
+>>>>>>> master
 # Includes in <head>
 # ------------------
 

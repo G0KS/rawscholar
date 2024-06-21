@@ -50,7 +50,11 @@ function FooterComponent() {
                </li>
                <li>
                   <Link
+<<<<<<< HEAD
                      to="/contactus"
+=======
+                     to="/"
+>>>>>>> master
                      style={{ textDecoration: "none", color: "white" }}
                   >
                      Contact

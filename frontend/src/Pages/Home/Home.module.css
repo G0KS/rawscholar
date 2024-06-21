@@ -10,6 +10,7 @@
    top: 50%;
    transform: translate(0%, -50%);
    color: white;
+<<<<<<< HEAD
    font-size: 4rem;
 }
 
@@ -17,6 +18,9 @@
    .heroContent{
       font-size: 1.5rem;
    }
+=======
+   font-size: 55px;
+>>>>>>> master
 }
 
 .heroText {
