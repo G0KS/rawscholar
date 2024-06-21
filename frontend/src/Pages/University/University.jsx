@@ -1,13 +1,20 @@
 import { useContext } from "react";
 
-import university1 from "../assets/universities/university1.svg";
+import university1 from "../../assets/universities/university1.svg";
 import { useFrappeGetDocList } from "frappe-react-sdk";
-import { universityContext } from "../../Components/ContextShare";
+import {
+  courseContext,
+  universityContext,
+} from "../../Components/ContextShare";
+import { useNavigate } from "react-router-dom";
 
 function University({ show }) {
   show(true);
+
+  const navigate = useNavigate();
   const { unviersityData } = useContext(universityContext);
-  console.log("university", unviersityData);
+  const { setCourseData } = useContext(courseContext);
+
   const { data, error } = useFrappeGetDocList("Courses", {
     fields: [
       "course",
@@ -21,6 +28,11 @@ function University({ show }) {
     filters: [["university", "=", unviersityData.university]],
   });
   console.log(error);
+
+  const gotoCourse = (course) => {
+    setCourseData(course);
+    navigate("/university/course");
+  };
 
   return (
     <section id="universitySection" className="container">
@@ -66,7 +78,11 @@ function University({ show }) {
         </div>
         <div className="courseContainer d-flex justify-content-between gap-5 flex-wrap py-5 px-2">
           {data?.map((course, i) => (
-            <div className="courseCard rounded shadow p-5 col-lg-5" key={i}>
+            <div
+              className="courseCard rounded shadow p-5 col-lg-5"
+              key={i}
+              onClick={()=>gotoCourse(course)}
+            >
               <div className="courseTitle mb-4 fw-bold">
                 <h5 className="fw-bold">{course.course}</h5>
               </div>

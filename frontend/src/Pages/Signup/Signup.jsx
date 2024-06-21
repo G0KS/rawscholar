@@ -6,7 +6,8 @@ import StudyIllustration from "../../assets/StudyIllustration.svg";
 import "./Signup.css";
 import { useFrappeCreateDoc } from "frappe-react-sdk";
 
-function Signup() {
+function Signup({ show }) {
+  show(false);
   const { createDoc } = useFrappeCreateDoc();
   const signin = () => {
     console.log("sas");
@@ -26,7 +27,7 @@ function Signup() {
           style={{ height: "100%" }}
         />
       </div>
-      <form className="formContainer shadow d-flex flex-column align-items-center justify-content-between">
+      <form className="formContainer shadow d-flex flex-column align-items-center justify-content-between gap-2">
         <img className="mb-2" src={Logo} alt="" width={140} />
         <div className="form-group">
           <p className="m-0">
