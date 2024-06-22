@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import university1 from "../../assets/universities/university1.svg";
 import { useFrappeGetDocList } from "frappe-react-sdk";
@@ -8,8 +8,10 @@ import {
 } from "../../Components/ContextShare";
 import { useNavigate } from "react-router-dom";
 
-function University({ show }) {
-  show(true);
+function University({ setShow }) {
+  useEffect(()=>{
+    setShow(true);
+  })
 
   const navigate = useNavigate();
   const { unviersityData } = useContext(universityContext);

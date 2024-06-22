@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import downArrow from "../../assets/icons/down arrow.svg";
 
 import style from "./Faq.module.css";
 
-function Faq({ show }) {
-   show(true);
+function Faq({ setShow }) {
+   useEffect(() => {
+      setShow(true);
+   });
    const [selected, setSelected] = useState(null);
 
    const toggle = (i) => {
