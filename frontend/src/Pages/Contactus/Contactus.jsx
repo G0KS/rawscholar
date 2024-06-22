@@ -103,7 +103,6 @@ function Contactus() {
             <Button
               className="mt-2 mb-3 w-100"
               style={{ fontSize: '13px', backgroundColor: '#067BC2' }}
-              type="submit"
             >
               Sent Message
             </Button>
