@@ -71,7 +71,7 @@ function Login({ show }) {
                <p className="m-0">Password</p>
                <input
                   className="inputBox"
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="Enter Password"
                   onChange={(e)=>getUserData(e)}
