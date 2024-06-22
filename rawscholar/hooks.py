@@ -13,7 +13,6 @@ fixtures = [
     {"dt": "Courses"},
     {"dt": "University"},
     {"dt": "Number Card"},
-
     {"dt": "Qualification Type"},
 ]
 

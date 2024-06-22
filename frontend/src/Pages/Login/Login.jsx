@@ -1,12 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.svg";
 import StudyIllustration from "../../assets/StudyIllustration.svg";
 import "./Login.css";
+import { useFrappeGetDocList } from "frappe-react-sdk";
 
 function Login({ show }) {
    show(false);
+
+   const [userData, setUserData] = useState({
+      email: "",
+      password: "",
+   });
+
+   const getUserData = (e) => {
+      const { name, value } = e.target;
+      setUserData({ ...userData, [name]: value });
+      console.log(userData);
+   };
+
+   const { data, error } = useFrappeGetDocList("Student", {
+      fields: ["name1", "email", "phone", "password"],
+      filters: userData.email ? [["email", "=", userData.email]] : [],
+   });
+
+   console.log(data, error);
+
+   const login = () => {
+      const { email, password } = userData;
+      if (!email || !password) {
+         alert("Fill the form");
+      }
+      else if(data[0]?.email === email){
+         if(data[0]?.password === password){
+            alert("Logged in")
+         }
+         else{
+            alert("Wrong password")
+         }
+      }
+      else{
+         alert("No account found")
+      }
+      
+   };
+
    return (
       <div className="containerlogin d-flex justify-content-center align-items-center">
          <img
@@ -22,7 +61,9 @@ function Login({ show }) {
                <input
                   className="inputBox"
                   type="text"
+                  name="email"
                   placeholder="Enter Email"
+                  onChange={(e)=>getUserData(e)}
                   style={{ fontSize: "15px" }}
                />
             </div>
@@ -31,14 +72,16 @@ function Login({ show }) {
                <input
                   className="inputBox"
                   type="text"
+                  name="password"
                   placeholder="Enter Password"
+                  onChange={(e)=>getUserData(e)}
                   style={{ fontSize: "15px" }}
                />
             </div>
             <Button
                className="mt-2 mb-3 w-100 "
                style={{ fontSize: "13px" }}
-               type="submit"
+               onClick={() => login()}
             >
                Login
             </Button>
