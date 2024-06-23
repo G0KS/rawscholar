@@ -4,11 +4,17 @@ import Navbar from "react-bootstrap/Navbar";
 
 import Logo from "../../assets/Logo.svg";
 import Search from "../../assets/icons/Search.svg";
+import Profile from "../../assets/Profile.svg";
 
 import style from "./NavbarComponent.module.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { userContext } from "../ContextShare";
 
 function NavbarComponent() {
+  const { userData, setUserData } = useContext(userContext);
+  setUserData(localStorage.getItem("userData"));
+
   return (
     <Navbar expand="lg">
       <Container>
@@ -24,7 +30,7 @@ function NavbarComponent() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto gap-5">
+          <Nav className="ms-auto gap-lg-5 gap-3">
             <div className="input-group">
               <input
                 className={style.searchBox}
@@ -35,28 +41,30 @@ function NavbarComponent() {
                 <img src={Search} alt="Search" />
               </button>
             </div>
-            <div className="d-flex gap-4 fw-medium">
-              <Nav.Link className={`${style.navHeading}`} href="/services">
-                Services
-              </Nav.Link>
-              <Nav.Link className={`${style.navHeading}`} href="/about">
-                About
-              </Nav.Link>
-              <Nav.Link className={`${style.navHeading}`} href="/contactus">
-                Contact
-              </Nav.Link>
-              <Link to="/signup">
-                <button
-                  className="btn rounded-pill"
-                  style={{
-                    backgroundColor: "#067bc2",
-                    color: "white",
-                    width: "100px",
-                  }}
+            <div className="mx-auto">
+              {userData ? (
+                <div
+                  className="rounded-circle border"
+                  style={{ height: "40px" }}
                 >
-                  Sign Up
-                </button>
-              </Link>
+                  <Link to="/profile">
+                    <img src={Profile} alt="" style={{ height: "100%" }} />
+                  </Link>
+                </div>
+              ) : (
+                <Link to="/signup">
+                  <button
+                    className="btn rounded-pill"
+                    style={{
+                      backgroundColor: "#067bc2",
+                      color: "white",
+                      width: "100px",
+                    }}
+                  >
+                    Sign Up
+                  </button>
+                </Link>
+              )}
             </div>
           </Nav>
         </Navbar.Collapse>

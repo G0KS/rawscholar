@@ -6,6 +6,12 @@
   border-radius: 4px;
 }
 
+@media only screen and (max-width: 600px) {
+  .searchBox{
+    width: 90%;
+  }
+}
+
 .search {
   background-color: #067bc2;
   border: none;
@@ -14,5 +20,4 @@
 
 .navButton {
   width: 100px;
-  background-color: #067BC2;
 }
