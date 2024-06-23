@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import notfound from "../../assets/notfound.png";
 import { Link } from "react-router-dom";
 
-function PageNotFound({ show }) {
-  show(true);
+function PageNotFound({ setShow }) {
+  useEffect(()=>{
+    setShow(true);
+  })
   return (
     <section id="notFoundSection">
       <div className="container text-center my-5">

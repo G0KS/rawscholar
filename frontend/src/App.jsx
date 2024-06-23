@@ -29,24 +29,24 @@ function App() {
 		{show && <NavbarComponent />}
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home show={setShow} />} />
-          <Route path="/countries" element={<Countries show={setShow} />} />
+          <Route path="/" element={<Home setShow={setShow} />} />
+          <Route path="/countries" element={<Countries setShow={setShow} />} />
           <Route
             path="/universities"
-            element={<Universities show={setShow}  />}
+            element={<Universities setShow={setShow}  />}
           />
-          <Route path="/university" element={<University show={setShow} />} />
-          <Route path="/university/course" element={<Course show={setShow} />} />
-          <Route path="/login" element={<Login show={setShow} />} />
-          <Route path="/signup" element={<Signup show={setShow} />} />
+          <Route path="/university" element={<University setShow={setShow} />} />
+          <Route path="/university/course" element={<Course setShow={setShow} />} />
+          <Route path="/login" element={<Login setShow={setShow} />} />
+          <Route path="/signup" element={<Signup setShow={setShow} />} />
           <Route
             path="/forgotpassword"
-            element={<ForgotPassword show={setShow} />}
+            element={<ForgotPassword setShow={setShow} />}
           />
-          <Route path="/profile" element={<Profile show={setShow} />} />
-          <Route path="/contactus" element={<Contactus show={setShow} />} />
-          <Route path="/faq" element={<Faq show={setShow}/>} />
-          <Route path="*" element={<PageNotFound show={setShow}/>} />
+          <Route path="/profile" element={<Profile setShow={setShow} />} />
+          <Route path="/contactus" element={<Contactus setShow={setShow} />} />
+          <Route path="/faq" element={<Faq setShow={setShow}/>} />
+          <Route path="*" element={<PageNotFound setShow={setShow}/>} />
         </Routes>
         {show && <FooterComponent />}
 	</FrappeProvider>

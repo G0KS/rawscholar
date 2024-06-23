@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -7,10 +7,12 @@ import StudyIllustration from "../../assets/StudyIllustration.svg";
 import "./Signup.css";
 import { useFrappeCreateDoc } from "frappe-react-sdk";
 
-function Signup({ show }) {
-   show(false);
+function Signup({ setShow }) {
+   useEffect(()=>{
+      setShow(false)
+   })
 
-   const [userData, setUserData] = useState({
+   const [inputData, setInputData] = useState({
       name1: "",
       email: "",
       phone: "",
@@ -20,14 +22,14 @@ function Signup({ show }) {
 
    const { createDoc } = useFrappeCreateDoc();
 
-   const getUserData = (e) => {
+   const getInputData = (e) => {
       const { name, value } = e.target;
-      setUserData({ ...userData, [name]: value });
+      setInputData({ ...inputData, [name]: value });
    };
 
    const signin = () => {
-      const { name1, email, phone, password, confirmPassword } = userData;
-      console.log(userData);
+      const { name1, email, phone, password, confirmPassword } = inputData;
+
       if (!name1 || !email || !phone || !password || !confirmPassword) {
          alert("Fill the form");
       } else if (password !== confirmPassword) {
@@ -67,7 +69,7 @@ function Signup({ show }) {
                   className="inputBox"
                   type="text"
                   name="name1"
-                  onChange={(e) => getUserData(e)}
+                  onChange={(e) => getInputData(e)}
                   placeholder="Enter Full Name"
                   style={{ fontSize: "15px" }}
                />
@@ -80,7 +82,7 @@ function Signup({ show }) {
                   className="inputBox"
                   type="text"
                   name="email"
-                  onChange={(e) => getUserData(e)}
+                  onChange={(e) => getInputData(e)}
                   placeholder="Enter Email"
                   style={{ fontSize: "15px" }}
                />
@@ -93,7 +95,7 @@ function Signup({ show }) {
                   className="inputBox"
                   type="text"
                   name="phone"
-                  onChange={(e) => getUserData(e)}
+                  onChange={(e) => getInputData(e)}
                   placeholder="Enter Phone Number"
                   style={{ fontSize: "15px" }}
                />
@@ -107,7 +109,7 @@ function Signup({ show }) {
                   className="inputBox"
                   type="password"
                   name="password"
-                  onChange={(e) => getUserData(e)}
+                  onChange={(e) => getInputData(e)}
                   placeholder="Enter Password"
                   style={{ fontSize: "15px" }}
                />
@@ -120,7 +122,7 @@ function Signup({ show }) {
                   className="inputBox"
                   type="password"
                   name="confirmPassword"
-                  onChange={(e) => getUserData(e)}
+                  onChange={(e) => getInputData(e)}
                   placeholder="Enter Password"
                   style={{ fontSize: "15px" }}
                />

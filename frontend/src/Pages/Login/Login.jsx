@@ -1,49 +1,54 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Logo from "../../assets/Logo.svg";
-import StudyIllustration from "../../assets/StudyIllustration.svg";
-import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
 import { useFrappeGetDocList } from "frappe-react-sdk";
 
-function Login({ show }) {
-   show(false);
+import Logo from "../../assets/Logo.svg";
+import StudyIllustration from "../../assets/StudyIllustration.svg";
 
-   const [userData, setUserData] = useState({
+import "./Login.css";
+import { userContext } from "../../Components/ContextShare";
+
+function Login({ setShow }) {
+   useEffect(() => {
+      setShow(false);
+   });
+
+   const { userData, setUserData } = useContext(userContext);
+   const navigate = useNavigate();
+
+   const [inputData, setInputData] = useState({
       email: "",
       password: "",
    });
 
-   const getUserData = (e) => {
+   const getInputData = (e) => {
       const { name, value } = e.target;
-      setUserData({ ...userData, [name]: value });
-      console.log(userData);
+      setInputData({ ...inputData, [name]: value });
    };
 
    const { data, error } = useFrappeGetDocList("Student", {
       fields: ["name1", "email", "phone", "password"],
-      filters: userData.email ? [["email", "=", userData.email]] : [],
+      filters: inputData.email ? [["email", "=", inputData.email]] : [],
    });
 
-   console.log(data, error);
+   if (error) console.log(error);
 
    const login = () => {
-      const { email, password } = userData;
+      const { email, password } = inputData;
       if (!email || !password) {
          alert("Fill the form");
-      }
-      else if(data[0]?.email === email){
-         if(data[0]?.password === password){
-            alert("Logged in")
+      } else if (data[0]?.email === email) {
+         if (data[0]?.password === password) {
+            setUserData(data[0]);
+            alert("Logged in");
+            navigate("/");
+         } else {
+            alert("Wrong password");
          }
-         else{
-            alert("Wrong password")
-         }
+      } else {
+         alert("No account found");
       }
-      else{
-         alert("No account found")
-      }
-      
    };
 
    return (
@@ -63,7 +68,7 @@ function Login({ show }) {
                   type="text"
                   name="email"
                   placeholder="Enter Email"
-                  onChange={(e)=>getUserData(e)}
+                  onChange={(e) => getInputData(e)}
                   style={{ fontSize: "15px" }}
                />
             </div>
@@ -74,7 +79,7 @@ function Login({ show }) {
                   type="password"
                   name="password"
                   placeholder="Enter Password"
-                  onChange={(e)=>getUserData(e)}
+                  onChange={(e) => getInputData(e)}
                   style={{ fontSize: "15px" }}
                />
             </div>

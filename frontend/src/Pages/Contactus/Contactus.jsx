@@ -8,10 +8,14 @@ import twitterblue from '../../assets/blue-icon/twitterblue.svg';
 import instagramblue from '../../assets/blue-icon/instagramblue.svg';
 import whatsappblue from '../../assets/blue-icon/whatsappblue.svg';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 
-function Contactus() {
+function Contactus({setShow}) {
+  useEffect(()=>{
+    setShow(true)
+  })
   return (
     <div className="container" style={{marginBlock:"70px"}}>
       <div className='titleBar d-flex shapeParent mb-3'>

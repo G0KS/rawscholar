@@ -14,9 +14,18 @@ import university3 from "../../assets/universities/university3.svg";
 import university4 from "../../assets/universities/university4.svg";
 
 import styles from "./Home.module.css";
+import { useContext, useEffect } from "react";
+import { userContext } from "../../Components/ContextShare";
 
-function Home({ show }) {
-   show(true);
+function Home({ setShow }) {
+   useEffect(() => {
+      setShow(true);
+   });
+
+   const { userData, setUserData } = useContext(userContext);
+
+   userData ? console.log(userData) : "";
+
    return (
       <>
          <section id="heroContainer">
@@ -79,9 +88,7 @@ function Home({ show }) {
                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   ></iframe>
                </div>
-               <div
-                  className="col-lg-6 py-4 px-5 shadow rounded shapeParent"
-               >
+               <div className="col-lg-6 py-4 px-5 shadow rounded shapeParent">
                   <div className="d-flex">
                      <div className="shape"></div>
                      <h5 className="fs-4">How it works</h5>
