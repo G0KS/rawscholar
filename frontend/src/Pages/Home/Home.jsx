@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import heroImage from "../../assets/heroimg3.jpg";
+// import heroImage from "../../assets/heroimg3.jpg";
+import heroImage from "../../assets/Studyabroad.svg";
 import find2 from "../../assets/find2.png";
 import passport2 from "../../assets/passport2.png";
 import diploma2 from "../../assets/diploma2.png";
@@ -31,7 +32,7 @@ function Home({ setShow }) {
          <section id="heroContainer">
             <div className={styles.hero}>
                <div className={styles.heroContent}>
-                  <div className={styles.heroText}>ignite</div>
+                  <div className={styles.heroText}><span style={{color:"#39C6B5",fontWeight:"bold"}} >ignite</span></div>
                   <div className={styles.heroText}>
                      <span>your academic journey</span>
                   </div>

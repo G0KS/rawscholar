@@ -1,6 +1,9 @@
 .hero {
    position: relative;
    overflow-x: hidden;
+   display: flex;
+   justify-content: end;
+   padding: 50px;
 }
 
 .heroContent {
@@ -10,7 +13,7 @@
    top: 50%;
    transform: translate(0%, -50%);
    color: white;
-   font-size: 4rem;
+   font-size: 3.5rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -23,6 +26,7 @@
    font-weight: 900;
    overflow: hidden;
    white-space: nowrap;
+   color: #000000;
 }
 
 .heroText:first-of-type {
@@ -91,7 +95,8 @@
 }
 
 .heroImageDiv {
-   width: 100%;
+   width: 45%;
+   
 }
 
 .heroImageDiv img {
