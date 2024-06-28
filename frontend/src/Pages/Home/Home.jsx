@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 // import heroImage from "../../assets/heroimg3.jpg";
 import heroImage from "../../assets/Studyabroad.svg";
+// import elemet from "../../assets/elemet3.png";
 import find2 from "../../assets/find2.png";
 import passport2 from "../../assets/passport2.png";
 import diploma2 from "../../assets/diploma2.png";
@@ -37,6 +38,7 @@ function Home({ setShow }) {
                      <span>your academic journey</span>
                   </div>
                </div>
+               <img className="d-flex" alt="" />
                <div className={styles.heroImageDiv}>
                   <img src={heroImage} alt="Hero" />
                </div>

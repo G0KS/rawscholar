@@ -8,7 +8,7 @@ function Profile() {
   return (
     <div className="container">
       <div className="p-2 ">
-        <h2 style={{ color: "#067BC2", fontWeight: "bolder" }}>
+        <h2 style={{ color: "#067BC2", fontWeight: "bolder",marginTop:"50px" }}>
           Hello Suresh Raina 👋
         </h2>
         <p className="mt-4">
@@ -90,7 +90,7 @@ function Profile() {
                 type="number"
                 name="phonenumber"
                 placeholder="Enter PhoneNo"
-                style={{ fontSize: "15px", border: "none" }}
+                style={{ fontSize: "15px", border: "none", appearance:"none" }}
               />
             </div>
             {/* gender */}
@@ -382,7 +382,7 @@ function Profile() {
       </div>
       <div className="row">
       {/* General Documents */}
-        <div className="col-4">
+        <div className="col-sm-4">
           <div className="p-2 ">
             <div className="titleBar d-flex shapeParent mt-5 ">
               <div className="shape" style={{ height: "25px" }}></div>
@@ -471,7 +471,7 @@ function Profile() {
           </div>
         </div>
         {/* Academic certificate */}
-        <div className="col-4">
+        <div className="col-sm-4">
           <div className="p-2 ">
             <div className="titleBar d-flex shapeParent mt-5 ">
               <div className="shape" style={{ height: "25px" }}></div>
@@ -560,7 +560,7 @@ function Profile() {
           </div>
         </div>
         {/* Additional Documents */}
-        <div className="col-4">
+        <div className="col-sm-4">
           <div className="p-2 ">
             <div className="titleBar d-flex shapeParent mt-5 ">
               <div className="shape" style={{ height: "25px" }}></div>

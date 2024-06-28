@@ -16,7 +16,7 @@ function NavbarComponent() {
   setUserData(localStorage.getItem("userData"));
 
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg shadow-sm" style={{ position: "fixed", width:"100%", backgroundColor:"white",zIndex:"9999" }}>
       <Container>
         <Navbar.Brand>
           <Link to="/">
@@ -29,8 +29,8 @@ function NavbarComponent() {
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto gap-lg-5 gap-3">
+        <Navbar.Collapse id="basic-navbar-nav ">
+          <Nav className="ms-auto gap-lg-5 gap-3 ">
             <div className="input-group">
               <input
                 className={style.searchBox}
