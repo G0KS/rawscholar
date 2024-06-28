@@ -7,7 +7,7 @@ import upload from "../../assets/profile image/upload.svg";
 function Profile() {
   return (
     <div className="container">
-      <div className="p-2 ">
+      <div className="p-5">
         <h2 style={{ color: "#067BC2", fontWeight: "bolder",marginTop:"50px" }}>
           Hello Suresh Raina 👋
         </h2>
