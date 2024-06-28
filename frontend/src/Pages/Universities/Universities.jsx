@@ -70,8 +70,8 @@ function Universities({ setShow }) {
                {pageIndex > 0 ? (
                   <button
                      onClick={() => setPageIndex(pageIndex - 12)}
-                     className="btn btn-primary rounded-pill me-2"
-                     style={{ width: "100px" }}
+                     className="btn rounded-pill me-2"
+                     style={{ width: "100px",backgroundColor:"#067BC2",color:"white" }}
                   >
                      Previous
                   </button>
@@ -80,8 +80,8 @@ function Universities({ setShow }) {
                )}
                <button
                   onClick={() => setPageIndex(pageIndex + 12)}
-                  className="btn btn-success rounded-pill"
-                  style={{ width: "100px" }}
+                  className="btn rounded-pill"
+                  style={{ width: "100px",backgroundColor:"#39C6B5",color:"white" }}
                >
                   Next
                </button>

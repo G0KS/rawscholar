@@ -94,17 +94,19 @@ function Home({ setShow }) {
                <div className="col-lg-6 py-4 px-5 shadow rounded shapeParent">
                   <div className="d-flex">
                      <div className="shape"></div>
-                     <h5 className="fs-4">How it works</h5>
+                     <h5 className="fs-4 fw-bold">How it works</h5>
                   </div>
-                  <p>
-                     Raw Scholar is available to all students who wish to study
-                     abroad. Raw scholar is India’s 1st all inclusive platform
-                     in India designed to guide students in their college
-                     application process to universities and colleges abroad.
-                     Raw scholar is not our name. Its the name given to all the
-                     students is alumni of Raw scholar. You became a Raw scholar
-                     from the moment you entered this platform
-                  </p>
+                  <div className="p-2">
+                     <p >
+                        Raw Scholar is available to all students who wish to study
+                        abroad. Raw scholar is India’s 1st all inclusive platform
+                        in India designed to guide students in their college
+                        application process to universities and colleges abroad.
+                        Raw scholar is not our name. Its the name given to all the
+                        students is alumni of Raw scholar. You became a Raw scholar
+                        from the moment you entered this platform
+                     </p>
+                  </div>
                   <a
                      href="/"
                      style={{ color: "#067bc2", textDecoration: "none" }}
@@ -118,7 +120,7 @@ function Home({ setShow }) {
             <div className="countriesContainer ">
                <div className={`${styles.titleBar} d-flex shapeParent`}>
                   <div className="shape"></div>
-                  <h2 className="fs-4 ms-4">Major Countries</h2>
+                  <h2 className="fs-4 ms-4 fw-bold">Major Countries</h2>
                   <Link
                      to="/countries"
                      className={`${styles.titleTag} ms-auto py-2 px-3 shadow`}
@@ -166,7 +168,7 @@ function Home({ setShow }) {
             <div className="universityContainer my-5">
                <div className={`${styles.titleBar} d-flex shapeParent`}>
                   <div className="shape"></div>
-                  <h2 className="fs-4 ms-4">Major University</h2>
+                  <h2 className="fs-4 ms-4 fw-bold">Major University</h2>
                   <Link
                      to="/universities"
                      className={`${styles.titleTag} ms-auto py-2 px-3 shadow`}
@@ -245,7 +247,7 @@ function Home({ setShow }) {
                   className={`${styles.titleBar} d-flex py-4 m-0 shapeParent`}
                >
                   <div className="shape"></div>
-                  <h2 className="fs-4 ms-4">About Us</h2>
+                  <h2 className="fs-4 ms-4 fw-bold">About Us</h2>
                </div>
                <p className="aboutusText px-5 pb-5">
                   We aim for the upliftment of a community with better
@@ -264,7 +266,7 @@ function Home({ setShow }) {
             <div className="universityContainer my-5">
                <div className={`${styles.titleBar} d-flex shapeParent`}>
                   <div className="shape"></div>
-                  <h2 className="fs-4 ms-4">Popular Universities</h2>
+                  <h2 className="fs-4 ms-4 fw-bold">Popular Universities</h2>
                   <Link
                      to="/universities"
                      className={`${styles.titleTag} ms-auto py-2 px-3 shadow`}

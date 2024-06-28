@@ -7,7 +7,7 @@ import upload from "../../assets/profile image/upload.svg";
 function Profile() {
   return (
     <div className="container">
-      <div className="p-5">
+      <div className="p-2">
         <h2 style={{ color: "#067BC2", fontWeight: "bolder",marginTop:"50px" }}>
           Hello Suresh Raina 👋
         </h2>
@@ -19,7 +19,7 @@ function Profile() {
         </p>
         <div className="titleBar d-flex shapeParent mt-5 ">
           <div className="shape"></div>
-          <h2 className="fs-4 ms-4">Personal Details</h2>
+          <h2 className="fs-4 ms-4 fw-bold">Personal Details</h2>
           <Link
             className="ms-auto py-2  px-3 shadow  "
             style={{
@@ -158,7 +158,7 @@ function Profile() {
       <div className="p-2 ">
         <div className="titleBar d-flex shapeParent mt-5 ">
           <div className="shape"></div>
-          <h2 className="fs-4 ms-4">Education Info</h2>
+          <h2 className="fs-4 ms-4 fw-bold">Education Info</h2>
           <Link
             className="ms-auto py-2  px-3 shadow  "
             style={{
@@ -364,7 +364,7 @@ function Profile() {
       <div className="p-2 ">
         <div className="titleBar d-flex shapeParent mt-5 ">
           <div className="shape"></div>
-          <h2 className="fs-4 ms-4">Upload Documents </h2>
+          <h2 className="fs-4 ms-4 fw-bold">Upload Documents </h2>
           <Link
             className="ms-auto py-2  px-3 shadow  "
             style={{
@@ -560,7 +560,7 @@ function Profile() {
           </div>
         </div>
         {/* Additional Documents */}
-        <div className="col-sm-4">
+        <div className="col-sm-4 mb-4">
           <div className="p-2 ">
             <div className="titleBar d-flex shapeParent mt-5 ">
               <div className="shape" style={{ height: "25px" }}></div>
@@ -617,7 +617,7 @@ function Profile() {
               Documents 3
             </label>
             <Link
-              className=" py-2  px-3 shadow  "
+              className=" py-2  px-3 shadow"
               style={{
                 borderRadius: "20px",
                 textDecoration: "none",
